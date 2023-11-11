@@ -13,7 +13,7 @@ def two_sum(nums: List[int], target: int) -> List[int]:
 
     pointer_one = 0
     pointer_two = len(nums) - 1
-    indexMap = {}
+    indexMap = {}  # a mapping for items --> list of indexes where they are found
 
     for idx, num in enumerate(nums, start=0):
         indexMap[num] = [idx] + indexMap.get(num, [])
