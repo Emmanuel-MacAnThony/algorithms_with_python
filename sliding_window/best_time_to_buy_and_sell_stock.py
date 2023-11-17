@@ -14,9 +14,11 @@ def maxProfit(prices: List[int]):
     
     for price in prices:
         
-        if lowest < price:
+        if price < lowest:
             lowest = price
             
         max_profit = max(max_profit, price - lowest)
         
     return max_profit
+
+

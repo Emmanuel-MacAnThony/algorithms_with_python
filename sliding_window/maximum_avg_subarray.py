@@ -22,6 +22,7 @@ def maximum_avg_subarray(nums: List[int], k: int) -> float:
     
     return max_avg
 
+
 nums = [1,12,-5,-6,50,3]
 k = 4
 
