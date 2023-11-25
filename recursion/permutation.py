@@ -13,5 +13,3 @@ def permute(s: str):
     
     return out
 
-ans = permute('abc')
-print(ans)
