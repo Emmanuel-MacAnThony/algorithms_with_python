@@ -1,6 +1,4 @@
 """Given the head of a singly linked list, reverse the list, and return the reversed list."""
-
-
 class ListNode(object):
     
     def __init__(self, val=0, next=None) -> None:
@@ -19,5 +17,6 @@ def reverse_linked_list(head: ListNode):
         current = temp
         
     return prev
-        
-    
+
+
+
