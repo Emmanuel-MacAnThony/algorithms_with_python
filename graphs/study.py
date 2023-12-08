@@ -95,7 +95,7 @@ def bfs_traverse(starting_vertex: Vertex):
         for adjacent_vertex in current_vertex.connectedTo:
             if adjacent_vertex.getId() not in visited_vertices:
                 visited_vertices[adjacent_vertex.getId()] = True
-                queue.extend()
+                queue.extend([adjacent_vertex])
     
     
     
