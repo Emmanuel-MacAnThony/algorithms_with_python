@@ -1,4 +1,5 @@
 from typing import Dict
+from collections import deque
 
 class Vertex(object):
     
@@ -61,6 +62,45 @@ class Graph:
     
     def __contains__(self, n):
         return n in self.vertList
+    
+    
+# depth first traversal
+def dfs_traverse(vertex: Vertex, visited_vertices={}):
+    
+    visited_vertices[vertex.getId()] = True
+    
+    print(vertex.getId())
+    
+    #iterate through the current vertex adjacent vertices
+    for adjacent_vertex in vertex.connectedTo:
+        
+        if adjacent_vertex.getId() in visited_vertices:
+            continue
+        
+        # recursively call this method on the adjacent vertice
+        dfs_traverse(adjacent_vertex, visited_vertices)
+        
+
+# breadth first search
+def bfs_traverse(starting_vertex: Vertex):
+    
+    visited_vertices = {}
+    visited_vertices[starting_vertex.getId()] = True
+    queue = deque([starting_vertex])
+    
+    while queue:
+        
+        current_vertex = queue.popleft()
+        
+        for adjacent_vertex in current_vertex.connectedTo:
+            if adjacent_vertex.getId() not in visited_vertices:
+                visited_vertices[adjacent_vertex.getId()] = True
+                queue.extend()
+    
+    
+    
+    
+    
         
             
         
