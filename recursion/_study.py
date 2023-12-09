@@ -1,4 +1,4 @@
-from typing import Set
+from typing import Set, Iterable
 
 def cummulative(n: int):
     
@@ -38,5 +38,21 @@ def word_split(phrase: str, list_of_words: Set[str], output=None):
         
         return [] + word_split(phrase, list_of_words[1:], output)
     
-ans = sum_func(4321)
-print(ans)       
+def double_array(array: Iterable, index:int):
+    
+    if index >= len(array):
+        return;
+    
+    else:
+        array[index] = array[index] * array[index]
+        double_array(array, index + 1)
+        
+def reverse(string: str):
+    
+    if len(string) == 1:
+        return string[0]
+    
+    return string[len(string) - 1] + reverse(string[:len(string) - 1])
+
+ans = reverse('abcde')
+print(ans)
